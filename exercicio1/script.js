@@ -1,15 +1,38 @@
-function verificaDivisivel2E3() {
-    const numero = Number(prompt('Digite um número qualquer:'))
+function verificaDivisivelIfAninhado(){
+    const valor = Number(prompt('Informe um número a ser verificado!'))
 
-    if (numero % 2 === 0 || numero % 3 === 0) {
-        if (numero % 2 === 0) {
-            console.log(`O número ${numero} é divisível por 2.`)
+    if(valor % 2 === 0){
+        if(valor % 3 === 0){
+            return `O número ${valor} é divisivel por 2 e 3.`
+        }else{
+            return `O número ${valor} é divisivel apenas por 2.`
         }
-
-        if (numero % 3 === 0) {
-            console.log(`O número ${numero} é divisível por 3.`)
+    }else{
+        if(valor % 3 === 0){
+            return `O número ${valor} é divisivel apenas por 3.`
+        }else{
+            return `O número ${valor} NÃO é divisivel por 2 e nem por 3.`
         }
     }
 }
 
-verificaDivisivel2E3()
+// console.log(verificaDivisivelIfAninhado())
+
+const verificaDivisivelOperadores = () =>{
+    const valor = Number(prompt('Informe um número a ser verificado!'))
+
+    if(valor % 2 === 0 && valor % 3 === 0){
+        return `O número ${valor} é divisivel por 2 e 3.`
+    }else if(valor % 2 === 0 || valor % 3 === 0){
+        if(valor % 2 === 0){
+            return `O número ${valor} é divisivel apenas por 2.`
+        }else{
+            return `O número ${valor} é divisivel apenas por 3.`
+        }
+    }else{
+        return `O número ${valor} NÃO é divisivel por 2 e nem por 3.`
+    }
+
+}
+
+console.log(verificaDivisivelOperadores())
